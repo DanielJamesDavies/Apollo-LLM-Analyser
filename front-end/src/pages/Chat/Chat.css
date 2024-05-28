@@ -1,0 +1,9 @@
+.chat-page {
+	display: flex;
+	padding-bottom: 8px;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: calc(100dvh - 60px);
+	height: 100%;
+	overflow: hidden;
+}

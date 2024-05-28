@@ -1,0 +1,142 @@
+.analyse-page-data-prompts-prompt-container-collect-activations-menu-open {
+	cursor: pointer;
+}
+
+.analyse-page-data-prompts-prompt-container-collect-activations-menu-open > * {
+	pointer-events: none;
+	user-select: none;
+}
+
+.analyse-page-data-prompts-prompt {
+	position: relative;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	padding: 6px 24px;
+	border-radius: 32px;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: calc(29px + 2 * 6px);
+	background: var(--colour-grey-secondary);
+}
+
+.analyse-page-data-prompts-prompt-container-collect-activations-menu-open.analyse-page-data-prompts-prompt-container-selected-for-collection.analyse-page-data-prompts-prompt {
+	background: linear-gradient(180deg, var(--colour-blue-tint), var(--colour-blue));
+}
+
+.analyse-page-data-prompts-prompt-name {
+	flex-shrink: 1;
+	width: 100%;
+}
+
+.analyse-page-data-prompts-prompt:hover .analyse-page-data-prompts-prompt-name {
+	width: calc(100% - 30px);
+}
+
+.analyse-page-data-prompts-prompt-name input {
+	padding: 0;
+	padding-bottom: 1px;
+	border: 0;
+	width: 100%;
+	background: transparent;
+	font-size: 14px;
+	color: #fff;
+}
+
+.analyse-page-data-prompts-prompt-name input:focus {
+	outline: 0;
+}
+
+.analyse-page-data-prompts-prompt-manage {
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	opacity: 0;
+	transition: 0.2s;
+}
+
+.analyse-page-data-prompts-prompt:not(.analyse-page-data-prompts-prompt-container-collect-activations-menu-open):hover
+	.analyse-page-data-prompts-prompt-manage {
+	z-index: 2;
+	right: 8px;
+	opacity: 1;
+}
+
+.analysis-page-data-prompts-prompt-delete-btn {
+	height: 29px;
+	width: 29px;
+	border-radius: 100%;
+	background: var(--colour-grey-tertiary);
+	color: var(--text-colour-tertiary);
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.analysis-page-data-prompts-prompt-delete-btn:hover {
+	background: var(--text-colour-red);
+	color: var(--text-colour-primary);
+}
+
+.analyse-page-data-prompts-prompt-toggle-select-for-collection-btn {
+	height: 29px;
+	width: 29px;
+	border-radius: 100%;
+	background: transparent;
+	color: var(--text-colour-tertiary);
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.analyse-page-data-prompts-prompt-toggle-select-for-collection-btn:hover {
+	background: var(--colour-grey-tertiary);
+	color: var(--text-colour-primary);
+}
+
+.analyse-page-data-prompts-prompt-name-label {
+	position: absolute;
+	top: 12px;
+	display: flex;
+	font-size: 14px;
+	pointer-events: none;
+}
+
+.analyse-page-data-prompts-prompt-name-label-part span:not(.analyse-page-data-prompts-prompt-name-label-box) {
+	opacity: 0;
+}
+
+.analyse-page-data-prompts-prompt-name-label-box {
+	position: relative;
+	margin: -2px 0px;
+	padding: 2px 10px;
+	opacity: 1;
+	pointer-events: all;
+	user-select: none;
+	cursor: pointer;
+}
+
+.analyse-page-data-prompts-prompt-name-label-box::before {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: block;
+	content: "";
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, var(--colour-blue-tint), var(--colour-blue));
+}
+
+.analyse-page-data-prompts-prompt-container-collect-activations-menu-open.analyse-page-data-prompts-prompt-container-selected-for-collection
+	.analyse-page-data-prompts-prompt-name-label-box::before {
+	filter: brightness(150%);
+}
+
+.analyse-page-data-prompts-prompt-name-label-box span {
+	position: relative;
+	z-index: 2;
+	opacity: 1 !important;
+}

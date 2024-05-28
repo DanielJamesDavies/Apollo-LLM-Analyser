@@ -1,0 +1,77 @@
+.analyse-page-data-prompts {
+	width: 100%;
+}
+
+.analyse-page-data-prompts-is-collecting-activations {
+	filter: blur(4px);
+	transition: 0.2s;
+}
+
+.analyse-page-data-prompts-header {
+	display: flex;
+	gap: 24px;
+	align-items: center;
+	padding: 4px 24px;
+	border-radius: 32px;
+	box-sizing: border-box;
+	width: 100%;
+	background: var(--colour-grey-tertiary);
+}
+
+.analyse-page-data-prompts-header-title {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.analyse-page-data-prompts-header-buttons {
+	margin-left: auto;
+	min-height: 36px;
+}
+
+.analyse-page-data-prompts-header-button {
+	border-radius: 100%;
+	width: 36px;
+	height: 36px;
+	font-size: 20px;
+	color: #fff;
+	background: var(--colour-grey-tertiary);
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.analyse-page-data-prompts-header-button:hover {
+	background: var(--colour-grey-senary);
+}
+
+.analyse-page-data-prompts-list {
+	display: flex;
+	gap: 6px;
+	flex-direction: column;
+	margin: 6px 0;
+	max-height: min(50dvh, 600px);
+	overflow-y: auto;
+}
+
+.analyse-page-data-prompts-header-saving {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	opacity: 0.5;
+	animation: analyse-page-data-prompts-header-saving 2s infinite;
+}
+
+.analyse-page-data-prompts-header-saving span {
+	font-size: 13px;
+}
+
+@keyframes analyse-page-data-prompts-header-saving {
+	0% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 0.2;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}

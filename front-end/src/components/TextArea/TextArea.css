@@ -1,0 +1,54 @@
+.text-area-container {
+	display: flex;
+	align-items: flex-start;
+	border: 2px solid var(--colour-grey-quinary);
+	border-radius: 22px;
+	box-sizing: border-box;
+}
+
+.text-area-container textarea {
+	padding: 10px 15px;
+	border: 0;
+	box-sizing: border-box;
+	resize: none;
+	overflow: hidden;
+	color: #fff;
+	background: transparent;
+	width: 100%;
+}
+
+.text-area-container textarea:focus {
+	outline: none;
+}
+
+.text-area-container:focus-within {
+	border-color: var(--colour-blue);
+}
+
+.text-area-submit-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100%;
+	margin-top: 2px;
+	margin-right: 4px;
+
+	width: 32px;
+	height: 32px;
+
+	background: var(--colour-grey-secondary);
+	color: #888;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.text-area-container:not(.text-area-container-empty):not(.text-area-container-disable-submit) .text-area-submit-btn {
+	background: var(--colour-grey-tertiary);
+	color: #fff;
+}
+
+.text-area-container:not(.text-area-container-empty):not(.text-area-container-disable-submit) .text-area-submit-btn:hover {
+	background: var(--colour-blue);
+	background: linear-gradient(180deg, var(--colour-blue-tint), var(--colour-blue));
+	color: #fff;
+}

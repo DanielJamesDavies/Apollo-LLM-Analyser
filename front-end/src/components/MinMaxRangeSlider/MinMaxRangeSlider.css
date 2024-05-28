@@ -1,0 +1,29 @@
+.min-max-range-slider-container {
+	width: 100%;
+	min-width: 200px;
+}
+
+.min-max-range-slider {
+	position: relative;
+	border-radius: 5px;
+	width: 100%;
+	height: 12px;
+	background: linear-gradient(90deg, var(--colour-grey-tertiary), var(--colour-grey-quaternary));
+}
+
+.min-max-range-slider-thumb {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	border: 0;
+	border-radius: 5px;
+	width: 8px;
+	height: 28px;
+	background: var(--text-colour-quaternary);
+	background: linear-gradient(180deg, var(--colour-blue-tint), var(--colour-blue));
+	cursor: pointer;
+}
+
+.min-max-range-slider-thumb:focus {
+	outline: none;
+}

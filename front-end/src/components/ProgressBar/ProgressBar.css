@@ -1,0 +1,70 @@
+.progress-bar-container {
+	--border_radius: 12px;
+	--width: 150px;
+	--height: 7px;
+
+	position: relative;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.progress-bar-label {
+	width: fit-content;
+	font-size: 11px;
+	text-transform: uppercase;
+	opacity: 0.8;
+}
+
+.progress-bar-container-loading .progress-bar-label {
+	animation: progress-bar-container-loading-label 3s infinite linear;
+}
+
+@keyframes progress-bar-container-loading-label {
+	0% {
+		opacity: 0.6;
+	}
+	40% {
+		opacity: 0.3;
+	}
+	60% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 0.6;
+	}
+}
+
+.progress-bar {
+	position: relative;
+	width: var(--width);
+	height: var(--height);
+}
+
+.progress-bar-background {
+	display: block;
+	content: "";
+	border-radius: var(--border_radius);
+	width: var(--width);
+	height: var(--height);
+	background: var(--colour-grey-tertiary);
+}
+
+.progress-bar-progress-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: var(--border_radius);
+	width: calc(var(--width) * var(--progress));
+	height: var(--height);
+	overflow: hidden;
+}
+
+.progress-bar-progress {
+	display: block;
+	content: "";
+	border-radius: var(--border_radius);
+	width: var(--width);
+	height: var(--height);
+	background: linear-gradient(90deg, var(--colour-blue), var(--colour-blue-tint));
+}

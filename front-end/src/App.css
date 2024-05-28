@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap");
+
+:root {
+	--colour-grey-primary: #000;
+	--colour-grey-secondary: #0a0a0a;
+	--colour-grey-tertiary: #1e1e1e;
+	--colour-grey-quaternary: #242424;
+	--colour-grey-quinary: #353535;
+	--colour-grey-senary: #404040;
+	--colour-grey-septenary: #505050;
+	--colour-blue: #0058ff;
+	--colour-blue-tint: #3379ff;
+
+	--text-colour-primary: #fff;
+	--text-colour-secondary: #ddd;
+	--text-colour-tertiary: #bbb;
+	--text-colour-quaternary: #999;
+	--text-colour-blue: #0058ff;
+	--text-colour-blue-tint: #9bbdff;
+	--text-colour-red: #ff5800;
+}
+
+::-webkit-scrollbar {
+	width: calc(6px + (2 * 5px));
+	background: var(--colour-grey-primary);
+}
+
+::-webkit-scrollbar-thumb {
+	border: 5px solid var(--colour-grey-primary);
+	background-clip: padding-box;
+	border-radius: 9999px;
+	background: var(--colour-grey-tertiary);
+}
+
+* {
+	font-family: "Muli", -apple-system, "Segoe UI", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	margin: 0;
+	background: var(--colour-grey-primary);
+	color: var(--text-colour-primary);
+	height: 100%;
+	overflow-x: hidden;
+}
+
+button,
+button:focus {
+	font-family: "Muli", -apple-system, "Segoe UI", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	border: 0;
+	outline: 0;
+}
+
+.App {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	min-height: 100dvh;
+}
+
+@media (max-width: 1200px) {
+	.App {
+		overflow-x: hidden;
+	}
+}
+
+.app-unsupported-window-size-container {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	display: flex;
+	gap: 16px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100dvw;
+	height: 100dvh;
+	background: var(--colour-grey-primary);
+	color: var(--text-colour-secondary);
+	opacity: 0;
+}
+
+.app-unsupported-window-size-container svg {
+	font-size: 64px;
+}
+
+.app-unsupported-window-size-container span {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+@media (max-width: 850px) {
+	.app-unsupported-window-size-container {
+		z-index: 2;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

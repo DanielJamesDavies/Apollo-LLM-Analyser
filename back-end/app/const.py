@@ -1,0 +1,9 @@
+conversations_file_path = './data/conversations.parquet'
+chat_messages_folder_path = './data/chat-messages'
+chat_activations_folder_path = "./data/chat-activations"
+labels_file_path = "./data/analyse/labels.parquet"
+prompts_file_path = "./data/analyse/prompts.parquet"
+collected_activations_folder_path = "./data/analyse/collected-activations"
+collected_activations_list_file_path = "./data/analyse/collected-activations/collected-activations-list.parquet"
+models_folder_path = "./data/analyse/models"
+logistic_regression_models_folder_path = "./data/analyse/models/log-reg"

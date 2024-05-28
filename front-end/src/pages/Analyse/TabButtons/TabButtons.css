@@ -1,0 +1,26 @@
+.analyse-subtitle {
+	margin-top: 24px;
+	margin-bottom: 12px;
+	font-size: 32px;
+	font-weight: 600;
+}
+
+.analyse-charts {
+	overflow: hidden;
+	width: 100%;
+	max-width: 100vw;
+}
+
+.analyse-chart-container {
+	flex-shrink: 1;
+	margin: 0 auto;
+	object-fit: contain;
+	min-width: 500px;
+	min-height: 500px;
+}
+
+.analyse-layer-number {
+	margin: 0 auto;
+	width: fit-content;
+	font-weight: 600;
+}

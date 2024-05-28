@@ -1,0 +1,8 @@
+.analyse-page-data-section {
+	position: relative;
+	display: flex;
+	gap: 24px;
+	width: 100%;
+	min-height: 600px;
+	overflow: hidden;
+}
