@@ -26,7 +26,7 @@
 ## Key Technologies
 
 -   **Front-End**: JavaScript, React, Chart.js
--   **Back-End**: Python, Flask, HuggingFace Transformers, NumPy, Pandas
+-   **Back-End**: Python, Flask, Hugging Face Transformers, NumPy, Pandas
 
 ## Demo
 
