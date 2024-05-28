@@ -29,7 +29,7 @@ export const ActivationSpaceLogic = () => {
 		// 				.padStart(6, "0")
 		// 	)
 		// );
-		setLabelColours(["#0a4", "#f08", "#f40", "#fa0", "#44f"]);
+		setLabelColours(["#f08", "#44f", "#0a4", "#fa0", "#f40"]);
 	}, [tsne_activations]);
 
 	const [activation_space_style, setActivationSpaceStyle] = useState({});

@@ -19,6 +19,7 @@
 ## Features in Development
 
 -   **Build Analysis Models**: Train analysis models on collected activations to better understand the thoughts of LLMs.
+    -   Progress: Trained a sparse classifier and achieved 100% accuracy on multiple labels
 -   **Interpret Analysis Models**: View information on analysis models and train further analysis models using interpretable ML techniques to better understand them.
 -   **Network Viewer**: View all the components of an LLM and the animated process of how an input is transformed into an output. Uses data from analysis models to provide insights and predictions on the interal mechanisms of an LLM.
 
@@ -26,3 +27,9 @@
 
 -   **Front-End**: JavaScript, React, Chart.js
 -   **Back-End**: Python, Flask, HuggingFace Transformers, NumPy, Pandas
+
+## Demo
+
+Click below to watch the first demo for Apollo:
+
+[![Apollo Demo 1](https://img.youtube.com/vi/jNSura9WWoY/0.jpg)](https://www.youtube.com/watch?v=jNSura9WWoY)

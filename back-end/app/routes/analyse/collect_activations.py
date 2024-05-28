@@ -159,7 +159,10 @@ def collect_activations():
         # Combine Current and Temp Files
         current_activations_table = pq.read_table(current_activations_file_name)
         activations_temp_table = pq.read_table(activations_temp_file_name)
-        new_activations_table = pa.concat_tables([current_activations_table, activations_temp_table])
+        if current_activations_table.num_rows == 0:
+            new_activations_table = activations_temp_table
+        else:
+            new_activations_table = pa.concat_tables([current_activations_table, activations_temp_table])
         
         os.remove(current_activations_file_name)
         os.remove(activations_temp_file_name)
@@ -213,10 +216,17 @@ def get_subset_of_activations(llm, activations, decoded_output, words, collectin
                     token_count = len(word_tokens)
                 else:
                     token_count = min(len(word_tokens), int(collecting_tokens_count))
-                token_indexes.extend(list(range(i, i + token_count)))
-                keyword_tokens.extend(word_tokens)
+                new_tokens = list(range(i, i + token_count))
+                if not any(t in token_indexes for t in new_tokens):
+                    token_indexes.extend(new_tokens)
+                    keyword_tokens.extend(word_tokens[:token_count])
                 i += len(word_tokens) - 1
             i += 1
+    
+    print("lower_decoded_output", lower_decoded_output)
+    print("words_tokens", words_tokens)
+    print("token_indexes", token_indexes)
+    print("keyword_tokens", keyword_tokens)
     
     new_activations = []
     for activations_item in activations:
