@@ -18,13 +18,16 @@ def get_labels_and_prompts():
         labels_df = pd.read_parquet(labels_file_path)
         labels_json = labels_df.to_json(orient='records')
     else:
-        labels_json = []
+        labels_json = "[]"
     
     # Read or Create Labels File
     if os.path.exists(prompts_file_path):
         prompts_df = pd.read_parquet(prompts_file_path)
         prompts_json = prompts_df.to_json(orient='records')
     else:
-        prompts_json = []
+        prompts_json = "[]"
+        
+    print("labels_json", labels_json)
+    print("prompts_json", prompts_json)
     
     return jsonify({ 'message': 'Success', 'labels': labels_json, 'prompts': prompts_json })

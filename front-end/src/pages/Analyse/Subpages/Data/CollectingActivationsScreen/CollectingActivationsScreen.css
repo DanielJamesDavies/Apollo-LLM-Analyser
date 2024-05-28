@@ -116,3 +116,15 @@
 	margin-top: 0;
 	font-size: 14px;
 }
+
+.analyse-page-data-collecting-activations-screen-info-text-selected-labels {
+	gap: 0;
+	flex-direction: column;
+}
+
+.analyse-page-data-collecting-activations-screen-info-text-selected-labels ul {
+	margin: 0;
+	margin-top: 4px;
+	padding-left: 24px;
+	font-size: 12px;
+}

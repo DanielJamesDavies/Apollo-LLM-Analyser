@@ -95,9 +95,13 @@ export const CollectingActivationsScreen = () => {
 						<b>Collected Activations Size: </b>
 						<span>{Math.floor(collectionFileSize * 100) / 100} MB</span>
 					</div>
-					<div className='analyse-page-data-collecting-activations-screen-info-text'>
+					<div className='analyse-page-data-collecting-activations-screen-info-text analyse-page-data-collecting-activations-screen-info-text-selected-labels'>
 						<b>Selected Labels: </b>
-						<span>{selectedLabelsForCollection?.map((e) => labels?.find((e2) => e2?.id === e)?.name).join(", ")}</span>
+						<ul>
+							{selectedLabelsForCollection?.map((e, index) => (
+								<li key={index}>{labels?.find((e2) => e2?.id === e)?.name}</li>
+							))}
+						</ul>
 					</div>
 				</div>
 				<div className='analyse-page-data-collecting-activations-screen-radial-activations-plot-container'>
