@@ -19,7 +19,7 @@ export const LabelsLogic = () => {
 
 	const addLabel = () => {
 		const new_id = URL.createObjectURL(new Blob()).split("/").pop();
-		setLabels((oldLabels) => oldLabels.concat([{ id: new_id, name: "New Label", word_variants: "Word Variant 1, Word Variant 2" }]));
+		setLabels((oldLabels) => oldLabels.concat([{ id: new_id, name: "New Label", words_to_collect: "New Label" }]));
 	};
 
 	return { labels, addLabel, hasSavedLabelsAndPrompts, isCollectActivationsMenuOpen, isCollectingActivations };

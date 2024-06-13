@@ -21,7 +21,7 @@ export const Label = ({ label, index }) => {
 		expanded,
 		toggleExpanded,
 		changeName,
-		changeWordVariants,
+		changeWordsToCollect,
 		deleteLabel,
 		isCollectActivationsMenuOpen,
 		selectedLabelsForCollection,
@@ -69,9 +69,9 @@ export const Label = ({ label, index }) => {
 			</div>
 			<div className='analyse-page-data-labels-label-subcontent-container'>
 				<div className='analyse-page-data-labels-label-subcontent'>
-					<div className='analyse-page-data-labels-label-subcontent-title'>Word Variants (Comma Separated)</div>
+					<div className='analyse-page-data-labels-label-subcontent-title'>Words to Collect (Comma Separated)</div>
 					<div className='analyse-page-data-labels-label-subcontent-input-container'>
-						<input value={label?.word_variants} onChange={changeWordVariants}></input>
+						<input value={label?.words_to_collect} onChange={changeWordsToCollect}></input>
 					</div>
 				</div>
 			</div>

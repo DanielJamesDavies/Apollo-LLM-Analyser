@@ -144,7 +144,7 @@ def collect_activations():
     down_outputs_size = len(activations[0]) - 3
     columns = ["seed", "token", "layer"] + [f'n{i}' for i in range(down_outputs_size)]
     
-    words = [label] + [word.strip() for word in label_row['word_variants'].split(',')]
+    words = [word.strip() for word in label_row['words_to_collect'].split(',')]
     activations = get_subset_of_activations(llm, activations, decoded_output, words, token_options)
     activations_df = pd.DataFrame(activations, columns=columns)
     

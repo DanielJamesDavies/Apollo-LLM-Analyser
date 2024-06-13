@@ -108,8 +108,8 @@
 
 .analyse-page-data-prompts-prompt-name-label-box {
 	position: relative;
-	margin: -2px 0px;
-	padding: 2px 10px;
+	margin: -2px 1px;
+	padding: 2px 11px;
 	opacity: 1;
 	pointer-events: all;
 	user-select: none;

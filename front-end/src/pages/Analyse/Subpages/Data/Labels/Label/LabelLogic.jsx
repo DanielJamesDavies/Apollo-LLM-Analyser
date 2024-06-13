@@ -26,15 +26,27 @@ export const LabelLogic = ({ label, index }) => {
 	const changeName = (e) => {
 		setLabels((oldLabels) => {
 			let newLabels = JSON.parse(JSON.stringify(oldLabels));
+			const old_value = JSON.parse(JSON.stringify(newLabels[index].name));
 			newLabels[index].name = e?.target?.value;
+
+			// If Word Variants Includes Old Value
+			let words_to_collect_split = newLabels[index].words_to_collect.split(",").map((e) => e?.trim());
+			const word_variant_name_index = words_to_collect_split?.findIndex((e) => e === old_value);
+			if (word_variant_name_index === -1) {
+				newLabels[index].words_to_collect = newLabels[index].name + ", " + newLabels[index].words_to_collect;
+			} else {
+				words_to_collect_split[word_variant_name_index] = newLabels[index].name;
+				newLabels[index].words_to_collect = words_to_collect_split.join(", ");
+			}
+
 			return newLabels;
 		});
 	};
 
-	const changeWordVariants = (e) => {
+	const changeWordsToCollect = (e) => {
 		setLabels((oldLabels) => {
 			let newLabels = JSON.parse(JSON.stringify(oldLabels));
-			newLabels[index].word_variants = e?.target?.value;
+			newLabels[index].words_to_collect = e?.target?.value;
 			return newLabels;
 		});
 	};
@@ -61,7 +73,7 @@ export const LabelLogic = ({ label, index }) => {
 		expanded,
 		toggleExpanded,
 		changeName,
-		changeWordVariants,
+		changeWordsToCollect,
 		deleteLabel,
 		isCollectActivationsMenuOpen,
 		selectedLabelsForCollection,
