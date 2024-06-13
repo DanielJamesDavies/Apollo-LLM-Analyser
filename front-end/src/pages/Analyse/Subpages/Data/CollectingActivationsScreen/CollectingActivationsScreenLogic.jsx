@@ -24,6 +24,7 @@ export const CollectingActivationsScreenLogic = () => {
 		estimated_time_remaining,
 		collection_time_completed,
 		collectionFileSize,
+		collecting_count,
 	} = useContext(AnalyseContext);
 
 	const [collecting_activations_text_dots_count, setCollectingActivationsTextDotsCount] = useState(0);
@@ -45,5 +46,6 @@ export const CollectingActivationsScreenLogic = () => {
 		estimated_time_remaining,
 		collection_time_completed,
 		collectionFileSize,
+		collecting_count,
 	};
 };

@@ -27,6 +27,7 @@ export const CollectingActivationsScreen = () => {
 		estimated_time_remaining,
 		collection_time_completed,
 		collectionFileSize,
+		collecting_count,
 	} = CollectingActivationsScreenLogic();
 
 	if (!isCollectingActivations) return null;
@@ -34,7 +35,10 @@ export const CollectingActivationsScreen = () => {
 		<div className='analyse-page-data-collecting-activations-screen-container'>
 			<div className='analyse-page-data-collecting-activations-screen'>
 				<div className='analyse-page-data-collecting-activations-screen-info'>
-					{Math.max(collectionGenerationsCount, selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * 10) -
+					{Math.max(
+						collectionGenerationsCount,
+						selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * collecting_count
+					) -
 						collectionGenerationsCount >
 					0 ? (
 						<div className='analyse-page-data-collecting-activations-screen-title'>
@@ -55,7 +59,7 @@ export const CollectingActivationsScreen = () => {
 								collectionGenerationsCount /
 								Math.max(
 									collectionGenerationsCount,
-									selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * 10
+									selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * collecting_count
 								)
 							}
 						/>
@@ -66,25 +70,34 @@ export const CollectingActivationsScreen = () => {
 								.padStart(
 									Math.max(
 										collectionGenerationsCount,
-										selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * 10
+										selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * collecting_count
 									).toString().length,
 									"0"
 								)}{" "}
 							/{" "}
-							{Math.max(collectionGenerationsCount, selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * 10)}{" "}
+							{Math.max(
+								collectionGenerationsCount,
+								selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * collecting_count
+							)}{" "}
 							)
 						</span>
 					</div>
 					<div className='analyse-page-data-collecting-activations-screen-info-text'>
 						<b>
-							{Math.max(collectionGenerationsCount, selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * 10) -
+							{Math.max(
+								collectionGenerationsCount,
+								selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * collecting_count
+							) -
 								collectionGenerationsCount >
 							0
 								? "Estimated Time Remaining: "
 								: "Collection Duration: "}
 						</b>
 						<span>
-							{Math.max(collectionGenerationsCount, selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * 10) -
+							{Math.max(
+								collectionGenerationsCount,
+								selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * collecting_count
+							) -
 								collectionGenerationsCount >
 							0
 								? estimated_time_remaining

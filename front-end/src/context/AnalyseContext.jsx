@@ -74,7 +74,8 @@ const AnalyseProvider = ({ children }) => {
 	const [selectedLabelsForCollection, setSelectedLabelsForCollection] = useState([]);
 	const [selectedPromptsForCollection, setSelectedPromptsForCollection] = useState([]);
 	const [min_collecting_layer_bound, setMinCollectingLayerBound] = useState(8);
-	const [max_collecting_layer_bound, setMaxCollectingLayerBound] = useState(18);
+	const [max_collecting_layer_bound, setMaxCollectingLayerBound] = useState(26);
+	const [collecting_count, setCollectingCount] = useState(10);
 	const [isCollectingAllTokens, setIsCollectingAllTokens] = useState(false);
 	const [collectingTokensCount, setCollectingTokensCount] = useState(1);
 	const [collectionGenerationsCount, setCollectionGenerationsCount] = useState(0);
@@ -115,7 +116,7 @@ const AnalyseProvider = ({ children }) => {
 		) {
 			if (
 				runCollectActivationsLabelPromptCurrentSeed[label_id][prompt_id] >=
-				Math.max(runCollectActivationsLabelPromptInitialSeed[label_id][prompt_id] + 9, 10)
+				Math.max(runCollectActivationsLabelPromptInitialSeed[label_id][prompt_id] + collecting_count - 1, collecting_count)
 			) {
 				reached_max_seed = true;
 			}
@@ -138,7 +139,7 @@ const AnalyseProvider = ({ children }) => {
 								return false;
 							if (
 								runCollectActivationsLabelPromptCurrentSeed[label_id][prompt_id] >=
-								Math.max(runCollectActivationsLabelPromptInitialSeed[label_id][prompt_id] + 9, 10)
+								Math.max(runCollectActivationsLabelPromptInitialSeed[label_id][prompt_id] + collecting_count - 1, collecting_count)
 							) {
 								return true;
 							}
@@ -228,13 +229,19 @@ const AnalyseProvider = ({ children }) => {
 			collection_runtime += run_collect_activations_res?.elapsed_time;
 
 			if (
-				Math.max(collection_generations_count, selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * 10) -
+				Math.max(
+					collection_generations_count,
+					selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * collecting_count
+				) -
 					collection_generations_count >
 				0
 			) {
 				const new_estimated_seconds_remaining =
 					(collection_runtime / collection_generations_count) *
-					(Math.max(collection_generations_count, selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * 10) -
+					(Math.max(
+						collection_generations_count,
+						selectedLabelsForCollection?.length * selectedPromptsForCollection?.length * collecting_count
+					) -
 						collection_generations_count);
 				setEstimatedTimeRemaining(formatEstimatedTimeRemaining(new_estimated_seconds_remaining));
 			} else {
@@ -301,6 +308,8 @@ const AnalyseProvider = ({ children }) => {
 				setMinCollectingLayerBound,
 				max_collecting_layer_bound,
 				setMaxCollectingLayerBound,
+				collecting_count,
+				setCollectingCount,
 				isCollectingAllTokens,
 				setIsCollectingAllTokens,
 				collectingTokensCount,

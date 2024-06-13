@@ -34,6 +34,8 @@ export const CollectActivationsLogic = () => {
 		collectingTokensCount,
 		setCollectingTokensCount,
 		runCollectActivations,
+		collecting_count,
+		setCollectingCount,
 	} = useContext(AnalyseContext);
 	const [hasJustChangedMenuOpenStatus, setHasJustChangedMenuOpenStatus] = useState(false);
 
@@ -69,7 +71,15 @@ export const CollectActivationsLogic = () => {
 	};
 
 	const incrementCollectingTokensCount = () => {
-		setCollectingTokensCount((oldValue) => Math.min(20, oldValue + 1));
+		setCollectingTokensCount((oldValue) => Math.min(64, oldValue + 1));
+	};
+
+	const decrementCollectingCount = () => {
+		setCollectingCount((oldValue) => Math.max(10, oldValue - 10));
+	};
+
+	const incrementCollectingCount = () => {
+		setCollectingCount((oldValue) => Math.min(5000, oldValue + 10));
 	};
 
 	return {
@@ -89,5 +99,8 @@ export const CollectActivationsLogic = () => {
 		collectingTokensCount,
 		decrementCollectingTokensCount,
 		incrementCollectingTokensCount,
+		collecting_count,
+		decrementCollectingCount,
+		incrementCollectingCount,
 	};
 };

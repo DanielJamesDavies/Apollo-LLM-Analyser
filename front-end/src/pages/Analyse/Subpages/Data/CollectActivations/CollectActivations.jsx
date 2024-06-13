@@ -36,6 +36,9 @@ export const CollectActivations = () => {
 		collectingTokensCount,
 		decrementCollectingTokensCount,
 		incrementCollectingTokensCount,
+		collecting_count,
+		decrementCollectingCount,
+		incrementCollectingCount,
 	} = CollectActivationsLogic();
 
 	return (
@@ -88,6 +91,29 @@ export const CollectActivations = () => {
 					</div>
 				</button>
 				<div className='analyse-page-data-collect-activations-options-divider'></div>
+				<div className='analyse-page-data-collect-activations-options-collection-count-container'>
+					<div className='analyse-page-data-collect-activations-options-collection-count-label'>Collection Count Per Item</div>
+					<button
+						className={
+							"analyse-page-data-collect-activations-options-collection-count-btn" +
+							(collecting_count <= 10 ? " analyse-page-data-collect-activations-options-collection-count-btn-inactive" : "")
+						}
+						onClick={decrementCollectingCount}
+					>
+						<FontAwesomeIcon icon={faChevronDown} />
+					</button>
+					<div className='analyse-page-data-collect-activations-options-collection-count-value'>{collecting_count}</div>
+					<button
+						className={
+							"analyse-page-data-collect-activations-options-collection-count-btn" +
+							(collecting_count >= 5000 ? " analyse-page-data-collect-activations-options-collection-count-btn-inactive" : "")
+						}
+						onClick={incrementCollectingCount}
+					>
+						<FontAwesomeIcon icon={faChevronUp} />
+					</button>
+				</div>
+				<div className='analyse-page-data-collect-activations-options-divider'></div>
 				<div className='analyse-page-data-collect-activations-options-layers-container'>
 					<div className='analyse-page-data-collect-activations-options-layers-title'>Layers</div>
 					<div className='analyse-page-data-collect-activations-options-layers-bound'>
@@ -113,7 +139,7 @@ export const CollectActivations = () => {
 					{isCollectingAllTokens ? null : (
 						<div className='analyse-page-data-collect-activations-options-tokens-collect-count-container'>
 							<div className='analyse-page-data-collect-activations-options-tokens-collect-count-label'>
-								No. of Tokens From Start of Keywords to Collect
+								Keyword Token Count from Start
 							</div>
 							<button
 								className={

@@ -164,8 +164,23 @@ def collect_activations():
         else:
             new_activations_table = pa.concat_tables([current_activations_table, activations_temp_table])
         
-        os.remove(current_activations_file_name)
-        os.remove(activations_temp_file_name)
+        try:
+            os.remove(current_activations_file_name)
+        except:
+            time.sleep(4)
+            try:
+                os.remove(current_activations_file_name)
+            except:
+                print("Could not delete:", current_activations_file_name)
+            
+        try:
+            os.remove(activations_temp_file_name)
+        except:
+            time.sleep(4)
+            try:
+                os.remove(activations_temp_file_name)
+            except:
+                print("Could not delete:", activations_temp_file_name)
         
         new_current_activations_file_name = collected_activations_folder_path + "/" + str(collection_id) + '/new.parquet'
         pq.write_table(new_activations_table, new_current_activations_file_name)

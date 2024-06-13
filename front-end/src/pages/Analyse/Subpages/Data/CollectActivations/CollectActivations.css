@@ -153,7 +153,9 @@
 }
 
 .analyse-page-data-collect-activations-container-is-collecting-activations .analyse-page-data-collect-activations-options-layers-container,
-.analyse-page-data-collect-activations-container-is-collecting-activations .analyse-page-data-collect-activations-options-tokens-container {
+.analyse-page-data-collect-activations-container-is-collecting-activations .analyse-page-data-collect-activations-options-tokens-container,
+.analyse-page-data-collect-activations-container-is-collecting-activations
+	.analyse-page-data-collect-activations-options-collection-count-container {
 	pointer-events: none;
 	user-select: none;
 	opacity: 0.3;
@@ -164,6 +166,7 @@
 	font-size: 13px;
 }
 
+.analyse-page-data-collect-activations-options-collection-count-container,
 .analyse-page-data-collect-activations-options-tokens-collect-count-container {
 	display: flex;
 	gap: 8px;
@@ -171,6 +174,7 @@
 	margin-left: 8px;
 }
 
+.analyse-page-data-collect-activations-options-collection-count-container button,
 .analyse-page-data-collect-activations-options-tokens-collect-count-container button {
 	display: block;
 	justify-content: center;
@@ -183,17 +187,22 @@
 	transition: 0.2s;
 }
 
-.analyse-page-data-collect-activations-options-tokens-collect-count-btn:not(
+.analyse-page-data-collect-activations-options-collection-count-btn:not(
+		.analyse-page-data-collect-activations-options-tokens-collect-count-btn-inactive
+	):hover,
+.analyse-page-data-collect-activations-options-collection-count-btn:not(
 		.analyse-page-data-collect-activations-options-tokens-collect-count-btn-inactive
 	):hover {
 	background: var(--colour-grey-septenary);
 	cursor: pointer;
 }
 
+.analyse-page-data-collect-activations-options-collection-count-btn-inactive,
 .analyse-page-data-collect-activations-options-tokens-collect-count-btn-inactive {
 	opacity: 0.5;
 }
 
+.analyse-page-data-collect-activations-options-collection-count-label,
 .analyse-page-data-collect-activations-options-tokens-collect-count-label {
 	flex-shrink: 0;
 	margin-right: 8px;

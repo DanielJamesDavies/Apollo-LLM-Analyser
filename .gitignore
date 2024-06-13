@@ -25,3 +25,6 @@ yarn-error.log*
 __pycache__/
 /back-end/data
 /back-end/data1
+/back-end/data2
+/back-end/data3
+/back-end/data4
